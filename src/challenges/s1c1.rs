@@ -1,17 +1,17 @@
 #[cfg(test)]
-fn c11() -> Result<String, hex::FromHexError> {
+fn s1c1() -> Result<String, hex::FromHexError> {
   let hex_string = String::from("49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d");
   let bytes = hex::decode(hex_string)?;
   return Ok(base64::encode(bytes));
 }
 
 #[cfg(test)]
-mod c11_tests {
+mod s1c1_tests {
   use super::*;
 
   #[test]
   fn test_answer() {
-    let base64_string = match c11() {
+    let base64_string = match s1c1() {
       Err(e) => panic!(e),
       Ok(s) => s,
     };
